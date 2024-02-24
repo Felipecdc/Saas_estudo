@@ -24,8 +24,6 @@
       "DATABASE_URL": "your-database-url",
       "JWT_SECRET": "your-jwt-secret"
     },
-    "framework": {
-      "notFound": "ignore"
-    }
+    "framework": null
   }
   
