@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "prisma generate && tsc",
-    "start": "node server.ts",
-    "dev": "ts-node-dev --transpile-only src/server.ts"
+    "build": "node vercel-build.js && tsc",
+    "start": "node src/server.ts",
+    "dev": "ts-node-dev --transpile-only src/server.ts",
+    "prestart": "npm run build"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

@@ -11,7 +11,11 @@
       {
         "src": "prisma",
         "use": "@prisma/cli"
-      }      
+      },
+      {
+        "src": "vercel-build.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
         {
