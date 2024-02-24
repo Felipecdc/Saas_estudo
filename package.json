@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "node vercel-build.js && tsc",
+    "build": "tsc",
+    "vercel-build": "ts-node-dev vercel-build.ts",  
     "start": "node src/server.ts",
-    "dev": "ts-node-dev --transpile-only src/server.ts",
-    "prestart": "npm run build"
+    "dev": "ts-node-dev --transpile-only src/server.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
