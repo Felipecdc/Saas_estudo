@@ -11,15 +11,15 @@
       {
         "src": "prisma",
         "use": "@prisma/cli"
-      }
+      }      
     ],
     "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "src/server.ts",
-        "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-      }
-    ],
+        {
+          "src": "/api/(.*)",
+          "dest": "src/server.ts",
+          "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+        }
+    ],      
     "env": {
       "DATABASE_URL": "your-database-url",
       "JWT_SECRET": "your-jwt-secret"
