@@ -1,15 +1,32 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "src/server.ts",
-            "use": "@vercel/node"
+      {
+        "src": "src/server.ts",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "2048mb"
         }
+      },
+      {
+        "src": "prisma",
+        "use": "@prisma/cli"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "src/server.ts"
-        }
-    ]
-}
+      { "handle": "vercel-touch", "src": "/.*" },
+      {
+        "src": "/api/(.*)",
+        "dest": "src/server.ts",
+        "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+      }
+    ],
+    "env": {
+      "DATABASE_URL": "your-database-url",
+      "JWT_SECRET": "your-jwt-secret"
+    },
+    "framework": {
+      "notFound": "ignore"
+    }
+  }
+  

@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "prisma generate && tsc",
     "start": "node server.ts",
     "dev": "ts-node-dev --transpile-only src/server.ts"
   },
