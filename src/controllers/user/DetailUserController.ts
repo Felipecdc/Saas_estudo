@@ -1,17 +1,17 @@
-import { Request, Response } from "express";
-import { DetailUserService } from "../../services/user/DetailUserService";
+import {Request, Response} from 'express'
+import { UserDetailService } from '../../services/user/DetailUserService'
 
-class DetailUserController {
-    async handle(req: Request, res: Response){
-        try{
-            const user_id = req.user_id;
-            const detailUserService = new DetailUserService();
-            const detailUser = await detailUserService.execute(user_id);
-            return res.json(detailUser)
-        }catch(err){
-            console.log(err)
-        }
-    }
+class DetailUserController{
+  async handle(request: Request, response: Response){
+    const user_id = request.user_id;
+
+    const userDetailService = new UserDetailService();
+
+    const detailUser = await userDetailService.execute(user_id);
+
+    return response.json(detailUser);
+
+  }
 }
 
-export { DetailUserController };
+export { DetailUserController }
